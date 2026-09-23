@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Digital visiting card — Amit Kumar, Quality International" />
+    <title>Amit Kumar · Quality International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="stage">
+      <p class="hint" id="hint">Tap the card to open</p>
+
+      <div class="scene">
+        <button
+          class="card"
+          id="card"
+          type="button"
+          aria-pressed="false"
+          aria-label="Amit Kumar visiting card. Tap to flip."
+        >
+          <div class="card__face card__face--front">
+            <div class="front__glow" aria-hidden="true"></div>
+            <header class="brand">
+              <span class="brand__mark" aria-hidden="true">Q</span>
+              <div class="brand__text">
+                <span class="brand__quality">Quality</span>
+                <span class="brand__intl">International</span>
+              </div>
+            </header>
+
+            <div class="front__body">
+              <p class="role">Technical Consultancy</p>
+              <h1 class="name">Amit Kumar</h1>
+              <ul class="contacts" aria-label="Primary contacts">
+                <li>
+                  <a href="tel:+919041063388">+91 90410 63388</a>
+                </li>
+                <li>
+                  <a href="tel:+919009413040">+91 90094 13040</a>
+                </li>
+                <li>
+                  <a href="mailto:qualityamit@hotmail.com">qualityamit@hotmail.com</a>
+                </li>
+              </ul>
+            </div>
+
+            <footer class="front__footer">
+              <p class="office">
+                H.O.: #450, 4th Floor, Magneto Mall, GE Road, Labhandi, Raipur (CG), India
+              </p>
+              <a class="web" href="https://www.qualityinternational.org" target="_blank" rel="noopener noreferrer">
+                www.qualityinternational.org
+              </a>
+            </footer>
+          </div>
+
+          <div class="card__face card__face--back">
+            <h2 class="back__title">Technical Consultancy for Getting</h2>
+            <ol class="services">
+              <li>BIS Licence — Certification, Renewal, Inclusion</li>
+              <li>ISO, NABL, CE — Certification &amp; Implementation</li>
+              <li>Training for ISO / Lab Testing / BIS</li>
+              <li>Calibration of Testing Equipments</li>
+              <li>Testing of Products for NABL Accredited Labs</li>
+              <li>Testing Equipments &amp; Plant Machinery</li>
+            </ol>
+
+            <div class="back__meta">
+              <p class="back__company">Quality International</p>
+              <p class="lab">
+                Lab: 7A, Avinash Logistic Park, Siltara I/A, Phase-II, Raipur CG
+              </p>
+              <ul class="contacts contacts--compact" aria-label="Office contacts">
+                <li><a href="tel:+917714066450">+91 771 4066450</a></li>
+                <li><a href="tel:+918966003040">+91 89660 03040</a></li>
+                <li><a href="tel:+919914663040">+91 99146 63040</a></li>
+                <li><a href="mailto:info@qualityinternational.org">info@qualityinternational.org</a></li>
+                <li><a href="mailto:info@qengineering.in">info@qengineering.in</a></li>
+              </ul>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <nav class="actions" aria-label="Quick actions">
+        <a class="action" href="tel:+919041063388">Call</a>
+        <a class="action" href="mailto:qualityamit@hotmail.com">Email</a>
+        <a class="action" href="https://www.qualityinternational.org" target="_blank" rel="noopener noreferrer">Website</a>
+        <button class="action action--ghost" id="flipBtn" type="button">Flip</button>
+      </nav>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
