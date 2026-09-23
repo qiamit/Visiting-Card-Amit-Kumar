@@ -7,9 +7,7 @@ function setOpen(open) {
   card.setAttribute("aria-pressed", String(open));
   flipBtn.textContent = open ? "Front" : "Flip";
   if (hint) {
-    hint.classList.add("is-hidden");
     hint.textContent = open ? "Tap again for front" : "Tap the card to open";
-    requestAnimationFrame(() => hint.classList.remove("is-hidden"));
   }
 }
 
@@ -20,6 +18,13 @@ function toggleCard() {
 card.addEventListener("click", (event) => {
   if (event.target.closest("a")) return;
   toggleCard();
+});
+
+card.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    toggleCard();
+  }
 });
 
 flipBtn.addEventListener("click", toggleCard);
