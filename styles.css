@@ -106,14 +106,8 @@ a:focus-visible {
   padding: 0;
   background: transparent;
   cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
   animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   -webkit-tap-highlight-color: transparent;
-}
-
-.card.is-open {
-  transform: rotateY(180deg);
 }
 
 .card:focus-visible {
@@ -122,9 +116,22 @@ a:focus-visible {
   border-radius: var(--radius);
 }
 
+.card__inner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card.is-open .card__inner {
+  transform: rotateY(180deg);
+}
+
 .card__face {
   position: absolute;
   inset: 0;
+  display: grid;
   border-radius: var(--radius);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -133,7 +140,6 @@ a:focus-visible {
 }
 
 .card__face--front {
-  display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 1rem;
   padding: 1.35rem 1.25rem 1.2rem;
@@ -267,7 +273,6 @@ a:focus-visible {
 }
 
 .card__face--back {
-  display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 0.9rem;
   padding: 1.35rem 1.2rem 1.15rem;
@@ -372,11 +377,11 @@ a:focus-visible {
 @keyframes rise-in {
   from {
     opacity: 0;
-    transform: translateY(28px) scale(0.96);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
@@ -418,12 +423,13 @@ a:focus-visible {
   .card,
   .hint,
   .actions,
-  .front__glow {
+  .front__glow,
+  .card__inner {
     animation: none !important;
     transition: none !important;
   }
 
-  .card.is-open {
+  .card.is-open .card__inner {
     transform: none;
   }
 
